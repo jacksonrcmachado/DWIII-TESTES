@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+import './app.css';
+
+const App: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
+
+  return (
+    <div className="container">
+      <div className="button-container">
+        <button className="btn" onClick={increment}>Incremento</button>
+        <button className="btn" onClick={decrement}>Decremento</button>
+        <button className="btn" onClick={reset}>Zerar</button>
+      </div>
+      <div className="counter">{count}</div>
+    </div>
+  );
+};
+
+export default App;
